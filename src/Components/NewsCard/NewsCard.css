@@ -1,0 +1,23 @@
+.news-card {
+  max-width: 90%;
+}
+
+/* Responsive: se adapta automáticamente */
+@media (min-width: 480px) {
+  .news-card {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .news-card {
+    max-width: 420px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .news-card {
+    max-width: 450px;
+  }
+}
+

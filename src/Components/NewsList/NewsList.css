@@ -1,0 +1,142 @@
+/* Contenedor general */
+.news-list-container {
+  background-color: #f9fafb;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Tarjetas de noticias */
+.news-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen de noticia */
+.news-img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Texto de estado */
+.estado {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.estado-publicado {
+  color: #2e8b57;
+  background: #e6f4ea;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.estado-pendiente {
+  color: #e0a500;
+  background: #fff8e1;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.estado-inactivo {
+  color: #d9534f;
+  background: #fdecea;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* ===========================
+   🎨 BOTONES DE ACCIÓN
+=========================== */
+.btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  justify-content: flex-end;
+}
+
+/* 💾 Botón guardar */
+.btn-save {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-save:hover {
+  background-color: #43a047;
+}
+
+/* ❌ Botón cancelar */
+.btn-cancel {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background-color: #e53935;
+}
+
+/* ✏️ Botón editar */
+.btn-edit {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-edit:hover {
+  background-color: #1976d2;
+}
+
+.btn-edit:disabled {
+  background-color: #b0bec5;
+  cursor: not-allowed;
+}
+
+/* Campos de edición */
+.edit-form input,
+.edit-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+  background-color: #fafafa;
+  font-size: 14px;
+}
+
+.edit-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}

@@ -1,0 +1,144 @@
+main{
+    padding: 16px;
+    background-color: blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.news-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+.news-container h2 {
+  text-align: center;
+  color: #1e2a38;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.news-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.news-form input,
+.news-form textarea {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 15px;
+}
+
+.news-form button {
+  background-color: #0078ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.news-form button:hover {
+  background-color: #005fcc;
+}
+
+.preview {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.news-card {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+}
+
+.news-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.news-card h3 {
+  color: #2b3b52;
+  margin: 5px 0;
+}
+
+.sub {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.cat {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.state {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.state.edición { color: #ff9800; }
+.state.publicado { color: #4caf50; }
+.state.desactivado { color: #f44336; }
+
+.actions {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.actions button {
+  flex: 1;
+  border: none;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+  background: #e0e0e0;
+  transition: 0.3s;
+}
+
+.actions button:hover {
+  background: #d0d0d0;
+}
+
+.alert, .info {
+  text-align: center;
+  margin-top: 15px;
+  color: #444;
+}
+
+@media (max-width: 600px) {
+  .news-form input, .news-form textarea {
+    font-size: 14px;
+  }
+}
