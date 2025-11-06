@@ -218,7 +218,7 @@ export default function AdminPanel() {
                     💾 Guardar
                   </button>
                   <button className="btn-cancel" onClick={handleCancel}>
-                    ❌ Cancelar
+                    Cancelar solicitud
                   </button>
                 </div>
               </div>
