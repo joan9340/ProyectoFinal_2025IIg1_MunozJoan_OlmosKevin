@@ -1,6 +1,7 @@
 .create-news-section {
-  max-width: 700px;
-  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  width: 85%;
   background: #f9fbff;
   padding: 2rem;
   border-radius: 12px;
@@ -46,18 +47,8 @@
 
 .create-news-form button {
   width: 100%;
-  background: #2563eb;
-  color: white;
-  border: none;
   padding: 12px;
-  border-radius: 6px;
   font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.create-news-form button:hover {
-  background: #1d4ed8;
 }
 
 .mensaje {

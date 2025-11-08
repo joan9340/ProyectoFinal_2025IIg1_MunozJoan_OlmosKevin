@@ -2,6 +2,7 @@ import React from "react";
 import CreateNews from "../../Components/CreateNews/CreateNews";
 import NewsList from "../../Components/NewsList/NewsList";
 import { useAuth } from "../../Context/AuthContext";
+import Button from "@mui/material/Button";
 import "./Dashboard.css";
 
 export default function Dashboard() {
@@ -23,9 +24,9 @@ export default function Dashboard() {
             Como <strong>Editor</strong>, puedes aprobar, publicar, desactivar o editar
             noticias.
           </p>
-          <a className="btn-admin" href="/admin">
+          <Button variant="contained" href="/admin">
             Ir al Panel Administrativo
-          </a>
+          </Button>
         </div>
       );
     } else {
@@ -37,14 +38,13 @@ export default function Dashboard() {
     <div className="dashboard-page">
       <header className="dashboard-header">
         <h1>
-          Bienvenido, <span>{userData?.nombre || "Usuario"}</span>
+          Bienvenido <span>{userData?.nombre || "Usuario"}</span>
         </h1>
         <p className="role-text">Rol: {userData?.role}</p>
-        <button className="logout-btn" onClick={logout}>
+        <Button variant="contained" onClick={logout}>
           Cerrar sesión
-        </button>
+        </Button>
       </header>
-
       <main className="dashboard-main">{renderContent()}</main>
     </div>
   );

@@ -9,6 +9,7 @@ import RoleRoute from "./Components/Routes/RoleRoute";
 import SelectRole from "./Pages/SelectRole/SelectRole";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
+import "./App.css";
 
 function App() {
   return (

@@ -1,11 +1,14 @@
 /* Contenedor general */
 .news-list-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   background-color: #f9fafb;
-  padding: 30px;
+  padding: 2%;
   border-radius: 15px;
   box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 85%;
+  gap: 10px;
 }
 
 /* Tarjetas de noticias */
@@ -129,7 +132,7 @@
 .edit-form textarea {
   width: 100%;
   padding: 10px;
-  margin: 6px 0;
+  margin: 6% 0;
   border-radius: 6px;
   border: 1px solid #d0d7de;
   background-color: #fafafa;

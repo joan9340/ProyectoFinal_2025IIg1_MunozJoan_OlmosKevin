@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { db } from "../../FirebaseConfig/FirebaseConfig";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useAuth } from "../../Context/AuthContext";
+import Button from "@mui/material/Button";
 import "./CreateNews.css";
 
 export default function CreateNews() {
@@ -143,9 +144,9 @@ export default function CreateNews() {
           />
         )}
 
-        <button type="submit" disabled={loading}>
+        <Button variant="contained" color="primary" type="submit" disabled={loading}>
           {loading ? "Guardando..." : "Guardar Noticia"}
-        </button>
+        </Button>
       </form>
 
       {mensaje && <p className="mensaje">{mensaje}</p>}
