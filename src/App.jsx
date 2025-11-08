@@ -9,6 +9,10 @@ import RoleRoute from "./Components/Routes/RoleRoute";
 import SelectRole from "./Pages/SelectRole/SelectRole";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
+
+import CreateNews from "./Components/CreateNews/CreateNews";
+import NewsList from "./Components/NewsList/NewsList";
+import ErrorComponent from "./Components/ErrorComponent/ErrorComponent";
 import "./App.css";
 
 function App() {
@@ -31,7 +35,12 @@ function App() {
                 <Dashboard />
               </ProtectedRoute>
             }
-          />
+          >
+            <Route path="create" element={<CreateNews />} />
+            <Route path="my-news" element={<NewsList />} />
+            <Route path="*" element={<ErrorComponent />} />
+            <Route path="admin" element={<RoleRoute rolesAllowed={["editor"]}><AdminPanel /></RoleRoute>} />
+          </Route>
 
           {/* Panel Editor */}
           <Route
