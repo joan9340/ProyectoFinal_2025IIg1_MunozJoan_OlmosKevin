@@ -43,7 +43,6 @@ function App() {
           >
             <Route path="create" element={<CreateNews />} />
             <Route path="my-news" element={<NewsList />} />
-            <Route path="*" element={<ErrorComponent />} />
             <Route path="admin" element={<RoleRoute rolesAllowed={["editor"]}><AdminPanel /></RoleRoute>} />
           </Route>
 
