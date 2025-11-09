@@ -4,7 +4,7 @@ import { useAuth } from '../../Context/AuthContext'
 import Button from "@mui/material/Button";
 import { Link } from 'react-router-dom';
 
-import Logo from '../../Assets/logo_pagina.webp'
+import Logo from '../../assets/logo_pagina.webp'
 
 const Header = ({ userData }) => {
   const { logout } = useAuth();
