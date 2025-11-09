@@ -1,14 +1,25 @@
 .dashboard-header {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     justify-content:space-between;
     width: 25%;
     height: 100%;
     text-align: center;
     position: sticky;
     background: rgb(27, 31, 43);
-    padding: 1.5rem;
+    padding: 2%;
+    overflow: auto;
+    gap: 2%;
+}
+
+.dashboard-desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
 }
 
 .logo-image{
@@ -17,16 +28,31 @@
     border-radius: 50%;
     object-fit: contain;
     background-color: #e9e9e9;
+    border: 2px solid rgb(168, 29, 29);
+    margin: 5%;
+}
+
+.welcome-section {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
 }
 
 .welcome-section h1 {
-    font-size: 1.8rem;
     color: #f8f8f8;
-    margin-bottom: 0.5rem;
+    font-weight: 300;
+    font-size: 1.5rem;
 }
 
 .welcome-section span {
     color: #94b6ff;
+}
+
+.welcome-section hr {
+    width: 80%;
+    border: 0.5px solid #353853;
+    margin: 1rem;
 }
 
 .role-text {
@@ -38,8 +64,8 @@
 .nav-buttons{
     display: flex;
     flex-direction: column;
+    width: 100%;
     gap: 10px;
-    margin-top: 2rem;
 }
 
 .nav-buttons a {
@@ -52,4 +78,69 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+}
+
+/* --- Móvil --- */
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .mobile-only {
+    display: flex;
+    width: 100%;
+  }
+
+  .mobile-topbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .logo-image-small {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e9e9e9;
+    border: 2px solid rgb(168, 29, 29);
+  }
+
+  .drawer-divider {
+    border: 1px solid #353853;
+    margin: 1rem 0;
+  }
+
+  .drawer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .logout-mov-button {
+    width: 100%;
+    margin-top: 10%;
+  }
 }
