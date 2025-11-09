@@ -1,0 +1,20 @@
+.news-detail-page {
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+.news-detail-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.news-detail-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}

@@ -9,11 +9,13 @@ import RoleRoute from "./Components/Routes/RoleRoute";
 import SelectRole from "./Pages/SelectRole/SelectRole";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AdminPanel from "./Pages/AdminPanel/AdminPanel";
+import "./App.css";
 
 import CreateNews from "./Components/CreateNews/CreateNews";
 import NewsList from "./Components/NewsList/NewsList";
 import ErrorComponent from "./Components/ErrorComponent/ErrorComponent";
-import "./App.css";
+import NewsPage from "./Pages/NewsPage/NewsPage";
+import NewsDetailPage from "./Pages/NewsDetailPage/NewsDetailPage";
 
 function App() {
   return (
@@ -27,10 +29,13 @@ function App() {
           {/* Selección de rol */}
           <Route path="/select-role" element={<SelectRole />} />
 
-          {/* Panel Reportero */}
-          <Route
-            path="/dashboard"
-            element={
+          {/* Página de noticias pública */}
+          <Route path="/" element={<NewsPage />}>
+          </Route>
+          <Route path=":id" element={<NewsDetailPage />} /> 
+
+          {/* Dashboard */}
+          <Route path="/dashboard" element={
               <ProtectedRoute>
                 <Dashboard />
               </ProtectedRoute>
@@ -41,16 +46,6 @@ function App() {
             <Route path="*" element={<ErrorComponent />} />
             <Route path="admin" element={<RoleRoute rolesAllowed={["editor"]}><AdminPanel /></RoleRoute>} />
           </Route>
-
-          {/* Panel Editor */}
-          <Route
-            path="/admin"
-            element={
-              <RoleRoute rolesAllowed={["editor"]}>
-                <AdminPanel />
-              </RoleRoute>
-            }
-          />
 
           {/* Redirección predeterminada */}
           <Route path="*" element={<Navigate to="/login" replace />} />

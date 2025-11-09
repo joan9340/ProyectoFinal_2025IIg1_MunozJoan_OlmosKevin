@@ -1,0 +1,35 @@
+.news-page{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #f5f5f5;
+    height: 100vh;
+}
+
+.news-page-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 100%;
+    height: 85%;
+    padding: 1.5rem;
+    gap: 1.5rem;
+    overflow-y: scroll;
+}
+
+.news-page-cards{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.MuiPagination-root {
+  margin-top: 1.5rem;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
