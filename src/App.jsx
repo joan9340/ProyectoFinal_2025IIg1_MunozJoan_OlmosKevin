@@ -13,7 +13,6 @@ import "./App.css";
 
 import CreateNews from "./Components/CreateNews/CreateNews";
 import NewsList from "./Components/NewsList/NewsList";
-import ErrorComponent from "./Components/ErrorComponent/ErrorComponent";
 import NewsPage from "./Pages/NewsPage/NewsPage";
 import NewsDetailPage from "./Pages/NewsDetailPage/NewsDetailPage";
 
