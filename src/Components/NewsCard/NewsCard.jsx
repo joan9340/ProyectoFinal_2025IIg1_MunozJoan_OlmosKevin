@@ -50,11 +50,11 @@ const NewsCard = ({ news }) => {
     >
       <CardActionArea>
         <CardMedia
-  component="img"
-  height="160"
-  image={news.imagen || Error_404}
-  alt={news.titulo}
-/>
+          component="img"
+          height="160"
+          image={news.imagen || Error_404}
+          alt={news.titulo}
+        />
 
         <CardContent sx={{ padding: "1rem" }}>
           <Typography

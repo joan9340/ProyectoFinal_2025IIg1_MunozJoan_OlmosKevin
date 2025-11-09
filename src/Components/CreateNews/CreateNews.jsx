@@ -16,15 +16,15 @@ export default function CreateNews() {
   const [loading, setLoading] = useState(false);
   const [mensaje, setMensaje] = useState("");
 
-  // 📸 Manejo de imagen: validación de tamaño y dimensiones
+  // Manejo de imagen: validación de tamaño y dimensiones
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
-    // 🧩 Verificar tamaño máximo (2 MB)
+    // Verificar tamaño máximo (2 MB)
     const maxSize = 2 * 1024 * 1024; // 2 MB en bytes
     if (file.size > maxSize) {
-      alert("⚠️ La imagen no debe superar los 2 MB.");
+      alert("La imagen no debe superar los 2 MB.");
       e.target.value = null; // Limpia el input
       return;
     }
@@ -33,14 +33,14 @@ export default function CreateNews() {
     reader.onload = (event) => {
       const img = new Image();
       img.onload = () => {
-        // 🧩 Verificar dimensiones (máximo 500 × 500 px)
+        // Verificar dimensiones (máximo 500 × 500 px)
         if (img.width > 500 || img.height > 500) {
-          alert("⚠️ La imagen no puede superar los 500 × 500 px.");
+          alert("La imagen no puede superar los 500 × 500 px.");
           e.target.value = null;
           return;
         }
 
-        // ✅ Si pasa las validaciones
+        // Si pasa las validaciones
         setImagen(event.target.result);
         setPreview(event.target.result);
       };
@@ -49,12 +49,12 @@ export default function CreateNews() {
     reader.readAsDataURL(file);
   };
 
-  // 📰 Guardar noticia en Firestore
+  // Guardar noticia en Firestore
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!userData?.uid) {
-      setMensaje("⚠️ Error: No se detectó el usuario. Intenta iniciar sesión nuevamente.");
+      setMensaje("Error: No se detectó el usuario. Intenta iniciar sesión nuevamente.");
       return;
     }
 
@@ -74,7 +74,7 @@ export default function CreateNews() {
         estado: "pendiente",
       });
 
-      setMensaje("✅ Noticia guardada correctamente (pendiente de aprobación).");
+      setMensaje("Noticia guardada correctamente (pendiente de aprobación).");
 
       // Reiniciar formulario
       setTitulo("");
@@ -85,7 +85,7 @@ export default function CreateNews() {
       setPreview("");
     } catch (error) {
       console.error("Error al guardar la noticia:", error);
-      setMensaje("❌ Error al guardar la noticia. Intenta de nuevo.");
+      setMensaje("Error al guardar la noticia. Intenta de nuevo.");
     } finally {
       setLoading(false);
     }

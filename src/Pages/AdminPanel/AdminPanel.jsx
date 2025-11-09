@@ -1,118 +1,3 @@
-// import React, { useEffect, useState } from "react";
-// import { useAuth } from "../../Context/AuthContext";
-// import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
-// import { db } from "../../FirebaseConfig/FirebaseConfig.js";
-// import { useNavigate } from "react-router-dom";
-// import "./AdminPanel.css";
-
-// export default function AdminPanel() {
-//   const { userData, logout } = useAuth();
-//   const navigate = useNavigate();
-//   const [news, setNews] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState("");
-
-//   // Verificar rol
-//   useEffect(() => {
-//     if (!userData || userData.role !== "editor") {
-//       navigate("/dashboard");
-//     }
-//   }, [userData]);
-
-//   // Cargar noticias
-//   useEffect(() => {
-//     const fetchNews = async () => {
-//       try {
-//         const querySnapshot = await getDocs(collection(db, "noticias"));
-//         const docs = querySnapshot.docs.map((doc) => ({
-//           id: doc.id,
-//           ...doc.data(),
-//         }));
-//         setNews(docs);
-//       } catch (err) {
-//         console.error(err);
-//         setError("No se pudieron cargar las noticias.");
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-//     fetchNews();
-//   }, []);
-
-//   // Actualizar estado (aprobar o desactivar)
-//   const updateStatus = async (id, status) => {
-//     try {
-//       const docRef = doc(db, "noticias", id);
-//       await updateDoc(docRef, { estado: status });
-//       setNews((prev) =>
-//         prev.map((n) => (n.id === id ? { ...n, estado: status } : n))
-//       );
-//     } catch (err) {
-//       console.error(err);
-//       alert("Error al actualizar el estado de la noticia.");
-//     }
-//   };
-
-//   if (loading) return <p className="loading">Cargando noticias...</p>;
-//   if (error) return <p className="error">{error}</p>;
-
-//   return (
-//     <div className="admin-panel">
-//       <header className="admin-header">
-//         <h1>Panel del Editor</h1>
-//         <button className="logout-btn" onClick={logout}>
-//           Cerrar sesión
-//         </button>
-//       </header>
-
-//       <h3>Gestión de noticias</h3>
-//       <div className="news-grid">
-//         {news.length === 0 ? (
-//           <p>No hay noticias registradas.</p>
-//         ) : (
-//           news.map((n) => (
-//             <div key={n.id} className="news-card">
-//               <img src={n.imagen} alt={n.titulo} className="news-img" />
-//               <div className="news-info">
-//                 <h4>{n.titulo}</h4>
-//                 <p>{n.descripcion}</p>
-//                 <p className="estado">
-//                   Estado:{" "}
-//                   <span
-//                     className={
-//                       n.estado === "publicado"
-//                         ? "estado-publicado"
-//                         : n.estado === "inactivo"
-//                         ? "estado-inactivo"
-//                         : "estado-pendiente"
-//                     }
-//                   >
-//                     {n.estado || "pendiente"}
-//                   </span>
-//                 </p>
-
-//                 <div className="btn-group">
-//                   <button
-//                     className="btn-approve"
-//                     onClick={() => updateStatus(n.id, "publicado")}
-//                   >
-//                     ✅ Aprobar
-//                   </button>
-//                   <button
-//                     className="btn-disable"
-//                     onClick={() => updateStatus(n.id, "inactivo")}
-//                   >
-//                     🚫 Desactivar
-//                   </button>
-//                 </div>
-//               </div>
-//             </div>
-//           ))
-//         )}
-//       </div>
-//     </div>
-//   );
-// }
 import React, { useEffect, useState } from "react";
 import { db } from "../../FirebaseConfig/FirebaseConfig";
 import {
@@ -170,7 +55,7 @@ export default function AdminPanel() {
       prev.map((n) => (n.id === id ? { ...n, ...formData } : n))
     );
     setEditando(null);
-    alert("✅ Noticia actualizada correctamente.");
+    alert("Noticia actualizada correctamente.");
   };
 
   const handleCancel = () => setEditando(null);
@@ -215,7 +100,7 @@ export default function AdminPanel() {
 
                 <div className="btn-group">
                   <button className="btn-save" onClick={() => handleSave(n.id)}>
-                    💾 Guardar
+                    Guardar
                   </button>
                   <button className="btn-cancel" onClick={handleCancel}>
                     Cancelar solicitud
@@ -236,33 +121,27 @@ export default function AdminPanel() {
                       n.estado === "publicado"
                         ? "estado-publicado"
                         : n.estado === "pendiente"
-                        ? "estado-pendiente"
-                        : "estado-inactivo"
+                          ? "estado-pendiente"
+                          : "estado-inactivo"
                     }
                   >
                     {n.estado}
                   </span>
                 </p>
 
-                {/* ✅ Botones del editor */}
+                {/* Botones del editor */}
                 <div className="btn-group">
-                  <button
-                    className="btn-edit"
-                    onClick={() => handleEdit(n)}
-                  >
-                    ✏️ Editar
-                  </button>
                   <button
                     className="btn-approve"
                     onClick={() => actualizarEstado(n.id, "publicado")}
                   >
-                    ✅ Aprobar
+                    Aprobar
                   </button>
                   <button
                     className="btn-deactivate"
                     onClick={() => actualizarEstado(n.id, "inactivo")}
                   >
-                    🔴 Desactivar
+                    Desactivar
                   </button>
                 </div>
               </>

@@ -1,4 +1,3 @@
-// src/Pages/SelectRole.jsx
 import React, { useState } from "react";
 import { useAuth } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -51,7 +50,7 @@ export default function SelectRole() {
             onClick={() => choose("reportero")}
             disabled={loading}
           >
-            📝 Reportero
+            Reportero
             <span className="role-desc">Crear y editar noticias (no publicar)</span>
           </button>
 
@@ -60,7 +59,7 @@ export default function SelectRole() {
             onClick={() => choose("editor")}
             disabled={loading}
           >
-            📰 Editor
+            Editor
             <span className="role-desc">Aprobar, publicar y gestionar todas las noticias</span>
           </button>
         </div>

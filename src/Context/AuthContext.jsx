@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
   const snap = await getDoc(ref);
 
   if (snap.exists()) {
-    // 🔹 Agregamos el UID manualmente al objeto
+    // UID manual en el objeto
     setUserData({ uid: currentUser.uid, ...snap.data() });
   } else {
     const base = {

@@ -23,11 +23,11 @@ const NewsPage = () => {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("todas");
 
-  // 🔽 Estado del menú flotante
+  // Estado del menú flotante
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
 
-  // 📄 Estado para la paginación
+  // Estado para la paginación
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
@@ -73,17 +73,17 @@ const NewsPage = () => {
       ? news
       : news.filter((n) => n.categoria === selectedCategory);
 
-  // 📄 Calcular las noticias visibles en esta página
+  // Calcular las noticias visibles en esta página
   const totalPages = Math.ceil(filteredNews.length / itemsPerPage);
   const startIndex = (currentPage - 1) * itemsPerPage;
   const currentNews = filteredNews.slice(startIndex, startIndex + itemsPerPage);
 
-  // 📄 Manejadores de eventos
+  // Manejadores de eventos
   const handleClick = (event) => setAnchorEl(event.currentTarget);
   const handleClose = () => setAnchorEl(null);
   const handleSelectCategory = (cat) => {
     setSelectedCategory(cat);
-    setCurrentPage(1); // Reiniciar a página 1 al cambiar categoría
+    setCurrentPage(1);
     handleClose();
   };
   const handlePageChange = (event, value) => setCurrentPage(value);
@@ -94,7 +94,7 @@ const NewsPage = () => {
       <main className="news-page-content">
         <h2 className="news-title">Noticias</h2>
 
-        {/* 🧭 Menú flotante MUI */}
+        {/* Menú flotante MUI */}
         <Paper
           elevation={1}
           sx={{
@@ -138,7 +138,7 @@ const NewsPage = () => {
           ))}
         </Menu>
 
-        {/* 📰 Noticias */}
+        {/* Noticias */}
         <section className="news-page-cards">
           {loading ? (
             <p>Cargando noticias...</p>
@@ -151,7 +151,7 @@ const NewsPage = () => {
           )}
         </section>
 
-        {/* 📄 Paginación */}
+        {/* Paginación */}
         {!loading && totalPages >= 1 && (
           <Stack spacing={2} alignItems="center" sx={{ mt: 2 }}>
             <Pagination
