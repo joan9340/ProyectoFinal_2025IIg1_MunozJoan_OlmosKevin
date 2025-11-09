@@ -62,9 +62,7 @@ export default function AdminPanel() {
 
   return (
     <div className="admin-panel">
-      <h2>Panel del Editor</h2>
-      <h3>Gestión de noticias</h3>
-
+      <h1>GESTION DE NOTICIAS</h1>
       <div className="news-grid">
         {news.map((n) => (
           <div key={n.id} className="news-card">

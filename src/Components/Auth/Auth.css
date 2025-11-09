@@ -50,6 +50,11 @@
   background: #005bcc;
 }
 
+.auth-box hr{
+  margin: 20px 0;
+  border: solid #a8dcff 0.5px;
+}
+
 .error {
   color: red;
   font-size: 0.9rem;

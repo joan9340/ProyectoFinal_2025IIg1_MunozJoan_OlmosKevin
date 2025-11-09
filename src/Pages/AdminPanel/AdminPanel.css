@@ -4,24 +4,16 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
   transition: all 0.3s ease;
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* === CABECERA === */
-.admin-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.admin-header h1 {
-  font-size: 1.8rem;
-  color: #1e293b;
-  font-weight: 700;
+.admin-panel h1 {
+  font-size: 2rem;
+  color: #284279;
+  margin: 0;
 }
 
 .logout-btn {

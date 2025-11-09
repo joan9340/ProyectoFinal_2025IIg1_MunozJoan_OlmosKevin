@@ -95,49 +95,49 @@ const NewsPage = () => {
         <h2 className="news-title">Noticias</h2>
 
         {/* Menú flotante MUI */}
-        <Paper
-          elevation={1}
-          sx={{
-            width: "100%",
-            maxWidth: 400,
-            margin: "0 auto",
-            borderRadius: 2,
-          }}
-        >
-          <List component="nav" aria-label="filtro de categorías">
-            <ListItemButton onClick={handleClick}>
-              <ListItemText
-                primary={`Categoría: ${
-                  selectedCategory === "todas" ? "Todas" : selectedCategory
-                }`}
-              />
-            </ListItemButton>
-          </List>
-        </Paper>
+        <section className="categorias">
+          <Paper
+            elevation={1}
+            sx={{
+              width: "100%",
+              maxWidth: 400,
+              borderRadius: 2,
+            }}
+          >
+            <List component="nav" aria-label="filtro de categorías">
+              <ListItemButton onClick={handleClick}>
+                <ListItemText
+                  primary={`Categoría: ${selectedCategory === "todas" ? "Todas" : selectedCategory
+                    }`}
+                />
+              </ListItemButton>
+            </List>
+          </Paper>
 
-        <Menu
-          anchorEl={anchorEl}
-          open={open}
-          onClose={handleClose}
-          anchorOrigin={{
-            vertical: "bottom",
-            horizontal: "center",
-          }}
-          transformOrigin={{
-            vertical: "top",
-            horizontal: "center",
-          }}
-        >
-          <MenuItem onClick={() => handleSelectCategory("todas")}>
-            Todas
-          </MenuItem>
-          {categories.map((cat) => (
-            <MenuItem key={cat} onClick={() => handleSelectCategory(cat)}>
-              {cat}
+          <Menu
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "center",
+            }}
+            transformOrigin={{
+              vertical: "top",
+              horizontal: "center",
+            }}
+          >
+            <MenuItem onClick={() => handleSelectCategory("todas")}>
+              Todas
             </MenuItem>
-          ))}
-        </Menu>
-
+            {categories.map((cat) => (
+              <MenuItem key={cat} onClick={() => handleSelectCategory(cat)}>
+                {cat}
+              </MenuItem>
+            ))}
+          </Menu>
+        </section>
+        
         {/* Noticias */}
         <section className="news-page-cards">
           {loading ? (

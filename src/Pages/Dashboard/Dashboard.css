@@ -14,9 +14,11 @@
   height: 100%;
   padding: 2rem;
   align-items: center;
-  background: #f0f4f8;
   overflow-y: scroll;
   gap: 20px;
+  background-image: url('../../assets/background_news.webp');
+  background-size: cover;
+  background-position: center;
 }
 
 /* Responsive */
@@ -24,10 +26,12 @@
   .dashboard-page {
     flex-direction: column;
   }
+
   .dashboard-main {
     width: 100%;
     padding: 1rem;
   }
+
   .dashboard-header h1 {
     font-size: 1.4rem;
   }

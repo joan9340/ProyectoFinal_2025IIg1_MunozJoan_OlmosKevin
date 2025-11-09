@@ -7,7 +7,7 @@
     height: 100%;
     text-align: center;
     position: sticky;
-    background: rgb(27, 31, 43);
+    background-image: linear-gradient(225deg, #1d2438 45%, #5167a1 100%);
     padding: 2%;
     overflow: auto;
     gap: 2%;
