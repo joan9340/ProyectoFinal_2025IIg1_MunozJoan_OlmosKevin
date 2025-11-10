@@ -26,9 +26,14 @@ const Header = ({ userData }) => {
       );
     } else if (userData?.role === "editor") {
       return (
-        <Button variant="text">
-          <Link to="/dashboard/admin">Gestión de Noticias</Link>
-        </Button>
+        <>
+          <Button variant="text">
+            <Link to="/dashboard/admin">Gestión de Noticias</Link>
+          </Button>
+          <Button variant="text">
+            <Link to="/dashboard/categories">Gestión de Categorías</Link>
+          </Button>
+        </>
       );
     } else {
       return <p>No tienes un rol asignado.</p>;

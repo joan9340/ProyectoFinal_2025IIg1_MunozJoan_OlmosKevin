@@ -1,0 +1,19 @@
+.category-manager {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+    background: #f8f8f8;
+    border-radius: 12px;
+}
+
+.category-list{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: left;
+}

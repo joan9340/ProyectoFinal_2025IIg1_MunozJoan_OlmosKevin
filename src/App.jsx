@@ -14,6 +14,7 @@ import CreateNews from "./Components/CreateNews/CreateNews";
 import NewsList from "./Components/NewsList/NewsList";
 import NewsPage from "./Pages/NewsPage/NewsPage";
 import NewsDetailPage from "./Pages/NewsDetailPage/NewsDetailPage";
+import CategoryManager from "./Pages/CategoryManager/CategoryManager";
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path="create" element={<CreateNews />} />
             <Route path="my-news" element={<NewsList />} />
             <Route path="admin" element={<RoleRoute rolesAllowed={["editor"]}><AdminPanel /></RoleRoute>} />
+            <Route path="categories" element={<RoleRoute rolesAllowed={["editor"]}><CategoryManager /></RoleRoute>} />
           </Route>
 
           {/* Redirección predeterminada */}
